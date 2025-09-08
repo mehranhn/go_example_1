@@ -6,12 +6,10 @@ For running this application you can simply run the command below and then navig
 go run main.go
 ```
 
-Then navigate to /swagger/index.html to see swagger documentations
-
 # How To Run With Docker
 
 ```sh
-docker compose up -d
+docker compose up -d --force-recreate
 ```
 
 ## Authentication
@@ -23,15 +21,6 @@ Content-Type: application/json
 
 {
   "phone": "+1234567890"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "OTP sent successfully",
-  "otp": "123456"
 }
 ```
 
@@ -98,11 +87,13 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 **Response:**
 ```json
-{
-  "id": "550e8400-e29b-41d4-a716-446655440000",
-  "phone": "+1234567890",
-  "created_at": "2023-01-01T00:00:00Z"
-}
+[
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "phone": "+1234567890",
+      "created_at": "2023-01-01T00:00:00Z"
+    }
+]
 ```
 
 # Database choice justification
